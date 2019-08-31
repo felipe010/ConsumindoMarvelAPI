@@ -9,9 +9,13 @@ const privateKey = '90d1bb3bf2602eb4dc2376a9f6526d5112d68f6f',
 
     /**Pois é, você precisa enviar a DATA (ts), CHAVE PUBLICA (publicKey) e o HASH (que é as duas informações anteriores mais a chave privada.) */
     URL = `http://gateway.marvel.com/v1/public/characters?ts=${ts}&apikey=${puplicKey}&hash=${hash}`
-
+    
     /*Usando o FETCH, apenas enviamos uma requisição para o recurso "characters" para ver se o servidor responde algo. */
-    fetch(URL).then(response => console.log(response));
+    fetch(URL)
+        .then(response => response.json()) //Aqui informo que quero o resultado em JSON
+        .then(response => {
+            console.log(response); /* Aqui já consigo ver o resultado em JSON, e ver o response em JSON no qual tem um atributo  'data' que contem um 'results' e nele contem o resultado que queremos. */
+        });
 }
 
 getConnection();

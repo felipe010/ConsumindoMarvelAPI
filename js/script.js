@@ -10,4 +10,8 @@ const privateKey = '90d1bb3bf2602eb4dc2376a9f6526d5112d68f6f',
     /**Pois é, você precisa enviar a DATA (ts), CHAVE PUBLICA (publicKey) e o HASH (que é as duas informações anteriores mais a chave privada.) */
     URL = `http://gateway.marvel.com/v1/public/characters?ts=${ts}&apikey=${puplicKey}&hash=${hash}`
 
+    /*Usando o FETCH, apenas enviamos uma requisição para o recurso "characters" para ver se o servidor responde algo. */
+    fetch(URL).then(response => console.log(response));
 }
+
+getConnection();

@@ -27,7 +27,7 @@ const drawHero = element => {
     const image = `${element.thumbnail.path}/portrait_uncanny.${element.thumbnail.extension}` //Entenda que thumbnail' é um objeto  que contem a propriedade 'path' e 'extension' e claro o thumbnail faz parte do cada item do meu array resultado. 
     //Dentro da template string tem uma string '/portrait_uncanny', ela está ali para retornar as imagens em tamanho menores, não deixando o carregamento lento.
     const hero = `
-        <div>
+        <div class="ed-item l-1-3">
             <h3>${element.name}</h3>
             <img src="${image}">
             <p>${element.description}</p>

@@ -1,0 +1,30 @@
+.main-title {
+    text-align: center; /*Alinhamento do titulos da página H1, centralizado na página.*/
+}
+
+.hero-img { /*Lembrando que envolvi nessa classe o thumbnail e a descrição*/
+    position: relative; /*Posição relativa ao elemento anterior, no caso a div pai com a classe Hero*/
+    overflow: hidden; /*A propriedade overflow define o comportamento de um elemento quando suas dimensões são excedidas pelo conteúdo, ou seja se a descrição do personagem for muito grande o que excedeu a div não vai aparecer.*/
+}
+
+.hero-img:hover .description {
+    top: 0; /*Ao passar o mouse na div item que contem a foto do personagem, a descrição recebe top zero. (lembrando que ela está oculta.)*/
+}
+
+.thumbnail {
+    display: block; /*faz o elemento em linha se comportar como elemento em bloco.*/
+    width: 100%; /*Largura da imagem em 100%*/
+}
+
+.description { 
+  display: flex; /*Torna o elemento um flex container automaticamente transformando todos os seus filhos diretos em flex itens.*/
+  align-items: center; /*Alinha a descrição no centro da DIV pai (.hero-img)*/
+  color: white; /*Cor do texto*/
+  background: hsla(0, 0%, 20%, 0.5); /*fundo opacu cinza.*/
+  position: absolute; /*Remove a descrição do fluxo normal, fiz isso para poder esconder ela.*/
+  width: 100%; /*largura, ocupa toda a div*/
+  height: 100%; /*altura*/
+  top: -100%; /*top negativo, mas esconder a descrição, só vai aparece quando passar o mouse. ;)*/
+  margin: 0;
+  padding: 1em;
+}

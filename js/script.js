@@ -1,6 +1,7 @@
 const privateKey = '90d1bb3bf2602eb4dc2376a9f6526d5112d68f6f',
- puplicKey = '8215cef19ca696c42fcbb3572bc4e305',
- content = document.getElementById('content')
+        puplicKey = '8215cef19ca696c42fcbb3572bc4e305',
+        content = document.getElementById('content'),
+        search = document.getElementById('search');
 
 
  const getConnection = () => {
@@ -40,4 +41,36 @@ const drawHero = element => {
 
 }
 
+//Função para busca um personagem com base no nome do mesmo.
+const searchHero = nome => {
+    const ts = Date.now(),
+    hash = md5(ts + privateKey + puplicKey), //Por natureza o javascript não tem nenhuma função ou obejto que gere um MD5, e a api precisa que esses dados sejam enviados em MD5
+
+    hero = encodeURIComponent(nome), //encodeURIComponent basicamente subistitui o espaço por '%20' para que a string seja concatenada corretamente na requisição.
+
+    /**Pois é, você precisa enviar a DATA (ts), CHAVE PUBLICA (publicKey) e o HASH (que é as duas informações anteriores mais a chave privada.) */
+    URL = `http://gateway.marvel.com/v1/public/characters?name=${hero}&ts=${ts}&apikey=${puplicKey}&hash=${hash}`
+    
+    /*Usando o FETCH, apenas enviamos uma requisição para o recurso "characters" para ver se o servidor responde algo. */
+    fetch(URL)
+    .then(response => response.json()) //Aqui informo que quero o resultado em JSON
+    .then(response => {
+    //console.log(response); /* Aqui já consigo ver o resultado em JSON, e ver o response em JSON no qual tem um atributo  'data' que contem um 'results' e nele contem um array com o resultado que queremos. */
+    //console.log(response.data.results);
+                                
+        response.data.results.forEach(element => {
+            drawHero(element);
+        });                
+    })
+    .catch(e => console.log(e));   
+}
+
+search.addEventListener('keyup', e => {
+    if(e.keyCode === 13) { // 13 é o código do botão ENTER do teclado.
+        content.innerHTML = '' //Limpar o HTML e só mostrar o herói que estamos buscando.
+        searchHero(e.target.value.trim()); //O método trim() retorna o texto sem os espaços em branco no início e fim do texto. O trim() não afeta o valor do texto em si.
+    }
+});
+
+//Ao carregar a página, getConnection já nos retorna alguns personagens.
 getConnection();

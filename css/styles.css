@@ -12,6 +12,10 @@ h1{
     color: white;
 }
 
+h3{
+    font-size: 150%;
+}
+
 .campo-buscar-div {
     padding: 15px;
     background-color: black;
@@ -22,7 +26,7 @@ h1{
     border-radius: 5px 5px 5px 5px; 
     color:#C0C0C0;
     height: 38px;
-    width: 300px;
+    width: 310px;
 }
 
 .main-title {
@@ -40,6 +44,8 @@ h1{
 
 .thumbnail {
     display: block; /*faz o elemento em linha se comportar como elemento em bloco.*/
+    border: 2px solid black;
+    padding: 20px;
     width: 100%; /*Largura da imagem em 100%*/
 }
 

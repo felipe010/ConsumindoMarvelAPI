@@ -3,6 +3,10 @@
     src:url('./Bebas-Regular.ttf');
 }
 
+body{
+    margin-bottom: 50px;
+}
+
 h1{ 
     margin-top: auto;
     margin-bottom: auto;   
@@ -14,6 +18,19 @@ h1{
 
 h3{
     font-size: 150%;
+}
+
+.hero{
+    width: 50%;
+}
+/*Telas nessa faixa de tamanho os seguintes elementos serão ajustados*/
+@media (min-width: 200px) and (max-width: 450px) {
+    .ed-container{
+        justify-content: center;
+    }
+    .hero{
+        width: 100%;
+    }
 }
 
 .campo-buscar-div {

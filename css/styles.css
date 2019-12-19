@@ -1,3 +1,16 @@
+@font-face {
+    font-family: Bebas-Regular;
+    src:url('./Bebas-Regular.ttf');
+}
+
+h1{ 
+    margin-top: auto;   
+    font-family: Bebas-Regular;
+    background-color: red;
+    padding: 15px;
+    color: white;
+}
+
 .main-title {
     text-align: center; /*Alinhamento do titulos da página H1, centralizado na página.*/
 }

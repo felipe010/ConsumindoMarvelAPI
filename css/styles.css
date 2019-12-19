@@ -38,6 +38,18 @@ h3{
     background-color: black;
 }
 
+.carregar-mais{
+    margin: 15px;
+    text-align: center;
+}
+
+#carregar-mais-botao{
+    border: black solid 2px;
+    border-radius: 0.5em;
+    background-color: blueviolet;
+    color: white;
+}
+
 #search{
     padding-left: 10px;
     border-radius: 5px 5px 5px 5px; 

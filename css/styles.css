@@ -4,11 +4,25 @@
 }
 
 h1{ 
-    margin-top: auto;   
+    margin-top: auto;
+    margin-bottom: auto;   
     font-family: Bebas-Regular;
     background-color: red;
     padding: 15px;
     color: white;
+}
+
+.campo-buscar-div {
+    padding: 15px;
+    background-color: black;
+}
+
+#search{
+    padding-left: 10px;
+    border-radius: 5px 5px 5px 5px; 
+    color:#C0C0C0;
+    height: 38px;
+    width: 300px;
 }
 
 .main-title {
